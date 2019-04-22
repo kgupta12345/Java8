@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 interface Addable {
-	int add(int a, int b);	
+	int add(int a, int b);
 }
 
 interface Hello{
@@ -26,10 +26,11 @@ public class LambaExperiment {
 		System.out.println(sum1.add(1, 20));
 		helloworld.printHelloWorld();
 		
-		//TRADITIONAL WAY
+		//[START]TRADITIONAL WAY
 		TestAddition testaddition = new TestAddition();
 		System.out.println(testaddition.add(1, 30));
 		System.out.println(testaddition.add(1, 30));
+		//[END]TRADITIONAL WAY
 		
         List<String> list = new ArrayList<String>();  
         list.add("A");  
@@ -38,13 +39,15 @@ public class LambaExperiment {
         list.add("D"); 
         list.add("E");  
         Stream<String> stream = list.stream();
-        stream = stream.filter((s) -> s.startsWith("A")&&s.contains("ri"));
+        stream = stream.filter((listvalue) -> listvalue.startsWith("A") && listvalue.contains("ri"));
         /* for(String str : (Iterable<String>)stream::iterator) {
         	System.out.print(str);
         }
+        stream.forEach(System.out::println);
         */
-        //stream.forEach(System.out::println);
-        stream.forEach(s -> System.out.println(s)); 
+        stream.forEach(streamvalue -> System.out.println(streamvalue)); 
+        
+        
       
         List<Integer> numberList = new ArrayList<Integer>();  
         numberList.add(1000);  
@@ -53,11 +56,8 @@ public class LambaExperiment {
         numberList.add(4000); 
         numberList.add(7000);  
         Stream<Integer> numberstream = numberList.stream();
-        numberstream = numberstream.filter((i) -> i>100  && i<99999);
-        numberstream.forEach(i -> System.out.println(i)); 
-        
-        
-        
+        numberstream = numberstream.filter((numberListvalue) -> numberListvalue>10000  && numberListvalue<99999);
+        numberstream.forEach(numberstreamvalue -> System.out.println(numberstreamvalue)); 
         }
 }
 
