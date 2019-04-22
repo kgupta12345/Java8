@@ -84,8 +84,8 @@ public class Java8Experiments implements AddableHello{
         numberList.add(4000); 
         numberList.add(7000);  
         Stream<Integer> numberstream = numberList.stream();
-        numberstream = numberstream.filter((numberListvalue) -> numberListvalue>10000  && numberListvalue<99999);
-        numberstream.forEach(numberstreamvalue -> System.out.println(numberstreamvalue)); 
+        numberstream = numberstream.filter((numberListvalue) -> numberListvalue>1000  && numberListvalue<99999);
+        numberstream.sorted().forEach(numberstreamvalue -> System.out.println(numberstreamvalue)); 
         }
 	    //--------------------------------------------------------------------------------------------------------
 
